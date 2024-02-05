@@ -1,10 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Welcome from './pages/Welcome'
-import About from './pages/About'
-import Brand from './pages/Brand'
-import Contact from './pages/Contact'
-import Login from './pages/Login'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -12,15 +9,11 @@ function App() {
     <>
       <Router>
         <div>
-          <Header/>
+          <Header />
           <Routes>
             <Route path='/' element={<Welcome />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/brand' element={<Brand />} />
-            <Route path='/contact' element={<Contact />} />
-            {/* <Route path='/login' element={<Login />} />
-            <Route path='/cart' element={<Contact />} /> */}
           </Routes>
+          <Footer />
         </div>
       </Router>
     </>

@@ -18,6 +18,12 @@ export default {
         'semi-md': '721px',
         'semi-md-col': { max: '721px' },
       },
+      backgroundImage: {
+       home: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/background.png')" 
+      },
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif']
+      }
     },
   },
   plugins: [],
