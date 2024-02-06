@@ -26,8 +26,6 @@ function Header() {
             phone: "(+250) 78 123 132",
             link: "#"
         }
-
-
     ]
 
     return (

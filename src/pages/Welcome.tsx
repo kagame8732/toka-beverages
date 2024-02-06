@@ -1,11 +1,12 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
-
 import 'swiper/css';
 import 'swiper/css/navigation';
-
+import 'swiper/css/pagination';
 import { Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom';
+import Products from '../components/Products';
+
 
 
 type home = {
@@ -14,9 +15,9 @@ type home = {
 }
 
 
-function Welcome() {
+const Welcome = () => {
 
-  const homeImage = [
+  const welcomeImages = [
     {
       image: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/background.png')",
       imageTitle: "/images/gibson-white.png"
@@ -30,24 +31,25 @@ function Welcome() {
       imageTitle: "/images/gibson-white.png"
     }
   ]
+
   return (
     <>
-      <div className='h-screen font-poppins'>
+      <section className='h-screen font-poppins'>
         <Swiper
 
           navigation={{
             nextEl: ".button-next-slide",
             prevEl: ".button-prev-slide"
           }
-
           }
+
           modules={[Navigation]} className="mySwiper h-screen relative group ">
-          {homeImage.map((image: home, index: number) => (
+          {welcomeImages.map((image: home, index: number) => (
             <SwiperSlide>
               <div className='w-full h-screen bg-no-repeat py-20 bg-cover' style={{ backgroundImage: image.image }} key={index}>
                 <div className='flex items-center h-screen justify-center flex-col gap-y-10'>
                   <img src={image.imageTitle} />
-                  <button className=' px-12 py-2 text-white border hover:bg-white hover:text-black transition duration-300  ease-in-out p- border-white transparent'>Shop Now</button>
+                  <button className='px-12 py-2 text-white border hover:bg-white hover:text-black transition duration-300  ease-in-out p- border-white transparent'>Shop Now</button>
                 </div>
 
               </div>
@@ -60,29 +62,30 @@ function Welcome() {
             <GoArrowRight />
           </div>
         </Swiper>
-      </div>
-      <section className='flex  items-center py-4 justify-between'>
-        <div className='flex h-[400px] justify-center items-center bg-gradient-to-r from-gray-200 via-gray-200 to-gray-300 p-8'>
+      </section>
+      <section className='flex  items-center py-4 justify-between font-poppins'>
+        <div className='flex w-[48%] h-[400px] justify-center items-center bg-gradient-to-r from-gray-100 via-gray-100 to-gray-200 p-8'>
           <div className='flex flex-col'>
             <img src="/images/gibson_black.png" alt="" />
             <Link to="#">
-            <button  className='text-2xl pt-10 text-[#812929] font-bold uppercase'>Shop Now</button>
+              <button className='text-2xl pt-10 text-[#812929] font-bold uppercase'>Shop Now</button>
             </Link>
           </div>
           <img src="/images/gibson.png" alt="" />
         </div>
-        <div className='h-[400px] flex justify-center items-center bg-gradient-to-r from-gray-200 via-gray-200 to-gray-300 p-8'>
+        <div className=' w-[48%] h-[400px] flex justify-center items-center bg-gradient-to-r from-gray-100 via-gray-100 to-gray-200 p-8'>
           <div>
             <h1 className='text-4xl font-extrabold uppercase w-[5%] text-center'>
-              glen <br/> moray
+              glen <br /> moray
             </h1>
             <Link to="#">
-            <button  className='text-2xl pt-10 text-[#812929] font-bold uppercase'>Shop Now</button>
+              <button className='text-2xl pt-10 text-[#812929] font-bold uppercase'>Shop Now</button>
             </Link>
           </div>
-          <img src='/images/GlenMoray.png'  /> 
+          <img src='/images/GlenMoray.png' alt=''/>
         </div>
       </section>
+      <Products/>
     </>
   )
 }

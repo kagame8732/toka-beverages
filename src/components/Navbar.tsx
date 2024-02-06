@@ -1,5 +1,4 @@
 
-
 const Navbar = () => {
     const HomeLinks = [{
         label: "Welcome",
@@ -13,13 +12,12 @@ const Navbar = () => {
         label: "Our Brands",
         link: "/our-brands"
     },
-
     {
         label: "Contact us",
         link: "/contact"
     }
-
     ]
+
     return (
         <div className='flex py-2 justify-center gap-4 items-center'>
             {

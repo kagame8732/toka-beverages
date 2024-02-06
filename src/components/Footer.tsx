@@ -1,49 +1,36 @@
+import React from 'react';
 
-function Footer() {
-    return (
-        <>
-            <section className="flex justify-around">
-                <section>
-                    <p>Quick Links</p>
-                    <li>Shop</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>Faqs</li>
-                </section>
-                <section>
-                    <p>Other links</p>
-                    <li>My Account</li>
-                    <li>Cart</li>
-                    <li>Orders</li>
-                    <li>Checkout</li>
-                </section>
-                <section>
-                    <p>Products</p>
-                    <li>Gypson’s Pink</li>
-                    <li>Gypson’s Gin</li>
-                    <li>Glen Moray</li>
-                    <li>Perlino Rose</li>
-                </section>
-                <section>
-                    <p>Follow Us</p>
-                    <li>Instagram</li>
-                    <li>facebook</li>
-                    <li>Twitter</li>
-                    <li>Youtube</li>
-                </section>
-            </section>
-            <section>
-                <div className='flex justify-end pr-10'>
-                    <img src="/visa.png"alt="" />
-                    <img src="mastercard.png" alt="" />
-                    <img src="/mtn.png" alt="" />
-                </div>
-            </section>
-            <section className=" text-center">
-                <p>&copy; All right reserved TOKA Beverages</p>
-            </section>
-        </>
-    )
-}
+const Footer: React.FC = () => (
+  <>
+    <section className="flex justify-around">
+      {renderLinksSection("Quick Links", ["Shop", "About us", "Contact us", "Faqs"])}
+      {renderLinksSection("Other links", ["My Account", "Cart", "Orders", "Checkout"])}
+      {renderLinksSection("Products", ["Gypson’s Pink", "Gypson’s Gin", "Glen Moray", "Perlino Rose"])}
+      {renderLinksSection("Follow Us", ["Instagram", "Facebook", "Twitter", "Youtube"])}
+    </section>
+    <section>
+      <div className="flex justify-end pr-10">
+        <img src="/images/visa.png" alt="" />
+        <img src="/images/mastercard.png" alt="" />
+        <img src="/images/mtn.png" alt="" />
+      </div>
+    </section>
+    <section className="text-center">
+      <p>&copy; All right reserved TOKA Beverages</p>
+    </section>
+  </>
+);
 
-export default Footer
+const renderLinksSection = (title: string, links: string[]) => (
+  <section key={title}>
+    <p>{title}</p>
+    <ul>
+      {links.map((link) => (
+        <li key={link}>{link}</li>
+      ))}
+    </ul>
+  </section>
+);
+
+export default Footer;
+

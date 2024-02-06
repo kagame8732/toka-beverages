@@ -1,17 +1,17 @@
-import { FaLongArrowAltRight } from "react-icons/fa";
-import gibsonBlack from '../images/gibson_black.png'
-import gibson from '../images/gibson.png'
-import glen1 from '../images/Glen1.png'
-import glen2 from '../images/glen_moray 1.png'
-import gibPink from '../images/gibson_pink-1.png'
-import gibBlue from '../images/whisky-glenmoray-packshot 1.png'
-import gibWhite from '../images/gibsons_70cl.png'
+// import { FaLongArrowAltRight } from "react-icons/fa";
+// import gibsonBlack from '../images/gibson_black.png'
+// import gibson from '../images/gibson.png'
+// import glen1 from '../images/Glen1.png'
+// import glen2 from '../images/glen_moray 1.png'
+// import gibPink from '../images/gibson_pink-1.png'
+// import gibBlue from '../images/whisky-glenmoray-packshot 1.png'
+// import gibWhite from '../images/gibsons_70cl.png'
 
 
 function About() {
   return (
     <>
-      <section className='flex justify-around'>
+      {/* <section className='flex justify-around'>
         <div className=' bg-slate-200 flex'>
           <div>
             <img src={gibsonBlack} alt="" />
@@ -58,7 +58,7 @@ function About() {
             <button>Shop Now<FaLongArrowAltRight /></button>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   )
 }
