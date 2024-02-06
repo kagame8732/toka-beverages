@@ -82,10 +82,10 @@ const Welcome = () => {
               <button className='text-2xl pt-10 text-[#812929] font-bold uppercase'>Shop Now</button>
             </Link>
           </div>
-          <img src='/images/GlenMoray.png' alt=''/>
+          <img src='/images/GlenMoray.png' alt='GlenMoray bottle' />
         </div>
       </section>
-      <Products/>
+      <Products />
     </>
   )
 }
