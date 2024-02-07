@@ -7,16 +7,11 @@ export default {
   theme: {
     extend: {
       screens: {
-        sm: '375px',
-        md: { max: '820px' },
-        lg: '976px',
-        xl: '1440px',
-        md_: '820px',
-        sm_: { max: '360px' },
-        'md-sm': { max: '1024px' },
-        'semi-sm': '120px',
-        'semi-md': '721px',
-        'semi-md-col': { max: '721px' },
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
       backgroundImage: {
        home: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/background.png')" 

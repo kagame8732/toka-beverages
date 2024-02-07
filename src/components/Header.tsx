@@ -7,7 +7,7 @@ import Cart from "./Cart";
 import Navbar from "./Navbar";
 
 
-function Header() {
+const Header = () => {
     const socialmedia = [
         {
             name: <FaFacebookF />,
@@ -29,11 +29,11 @@ function Header() {
     ]
 
     return (
-        <header className="w-full h-full text-[#505050] font-poppins font-light text-sm">
-            <div className="flex justify-between items-center">
-                <div className="flex items-center gap-4">
-                    {socialmedia.map((socialmedias) => (
-                        <div>
+        <header className="w-full p-[30px] h-full text-[#505050] font-poppins font-light text-sm ">
+            <div className="header-container flex justify-between items-center">
+                <div className="flex justify-center items-center gap-4 sm:p-2">
+                    {socialmedia.map((socialmedias, index) => (
+                        <div key={index}>
                             <a href={socialmedias.link}>
                                 {socialmedias.phone ? (
                                     <div className="flex items-center">
@@ -46,7 +46,7 @@ function Header() {
                     ))}
                 </div>
                 <Search />
-                <div className="flex justify-between gap-8 ">
+                <div className="flex justify-between gap-8 sm:p-4">
                     <ul className="">
                         <Link to="/login" className="flex items-center gap-2">
                             <FaUser />
@@ -60,7 +60,7 @@ function Header() {
                 <img src="/images/logo.png" alt="" />
             </div>
             <div>
-             <Navbar />
+                <Navbar />
             </div>
         </header>
     )

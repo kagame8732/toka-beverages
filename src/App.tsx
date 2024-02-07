@@ -5,8 +5,10 @@ import Footer from './components/Footer'
 import Brand from './pages/Brand'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Login from './pages/Login'
+import Cart from './components/Cart'
 
-function App() {
+const App = () => {
 
   return (
     <>
@@ -18,6 +20,8 @@ function App() {
             <Route path='/our-brands' element={<Brand />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/cart' element={<Cart />} />
           </Routes>
           <Footer />
         </div>

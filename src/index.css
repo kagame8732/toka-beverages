@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 body{
-    padding: 30px;
     background-color: white;
 }
+
+.swiper-pagination-bullet {
+    background-color: #812929;
+    width: 16px;
+    height: 16px;
+}
+
