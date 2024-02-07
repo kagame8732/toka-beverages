@@ -40,9 +40,8 @@ const Welcome = () => {
 
   return (
     <>
-      <section className='h-screen p-[30px] font-poppins'>
+      <section className='sm:h-screen h-[650px] p-[30px] font-poppins'>
         <Swiper
-
           navigation={{
             nextEl: ".button-next-slide",
             prevEl: ".button-prev-slide"
@@ -51,10 +50,10 @@ const Welcome = () => {
           modules={[Navigation]} className="mySwiper h-screen relative group ">
           {welcomeImages.map((image: home, index: number) => (
             <SwiperSlide>
-              <div className='w-full h-screen bg-no-repeat py-20 bg-cover' style={{ backgroundImage: image.image }} key={index}>
+              <div className='w-full sm:h-screen h-[600px] bg-no-repeat py-20 bg-cover  relative' style={{ backgroundImage: image.image }} key={index}>
                 <div className='flex justify-center items-center h-screen flex-col gap-y-10'>
-                  <img src={image.imageTitle} alt='Background-image' />
-                  <button className='px-12 py-2 text-white border hover:bg-white hover:text-black transition duration-300 ease-in-out p- border-white transparent'>Shop Now</button>
+                  <img src={image.imageTitle} alt='Background-image' className='object-contain absolute top-[300px] flex justify-center items-center' />
+                  <button className='px-12 py-2 text-white border  absolute font-semibold top-[400px] sm:top-[500px]  hover:bg-white hover:text-black transition duration-300 ease-in-out p- border-white transparent'>Shop Now</button>
                 </div>
               </div>
             </SwiperSlide>
@@ -68,7 +67,7 @@ const Welcome = () => {
         </Swiper>
       </section>
       <section className='flex flex-row flex-wrap mt-5 items-center p-6 justify-around font-poppins gap-8'>
-        <div className='flex w-[48%] h-[350px] justify-center items-center bg-gradient-to-r from-gray-100 via-gray-100 to-gray-200 p-8'>
+        <div className='flex sm:w-[48%] w-[90%] h-[350px] justify-center items-center bg-gradient-to-r from-gray-100 via-gray-100 to-gray-200 p-8'>
           <div className='flex flex-col'>
             <img src="/images/gibson_black.png" alt="Gibson-black" className='w-[150px] object-cover'/>
             <Link to="#">
@@ -79,7 +78,7 @@ const Welcome = () => {
           <img src="/images/gibson.png" alt="Gibson-bottle" className='object-cover w-[150px]' />
           </div>
         </div>
-        <div className='flex w-[48%] h-[350px] justify-center items-center bg-gradient-to-r from-gray-100 via-gray-100 to-gray-200 p-8'>
+        <div className='flex sm:w-[48%] h-[350px] w-[90%]  justify-center items-center bg-gradient-to-r from-gray-100 via-gray-100 to-gray-200 p-8'>
           <div>
             <h1 className='text-2xl font-extrabold uppercase text-center'>
               glen <br /> moray

@@ -30,7 +30,7 @@ const Header = () => {
 
     return (
         <header className="w-full p-[30px] h-full text-[#505050] font-poppins font-light text-sm ">
-            <div className="header-container flex justify-between items-center">
+            <div className="header-container flex sm:flex-row flex-col gap-4 sm:gap-0 justify-between items-center">
                 <div className="flex justify-center items-center gap-4 sm:p-2">
                     {socialmedia.map((socialmedias, index) => (
                         <div key={index}>

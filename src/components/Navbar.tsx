@@ -1,104 +1,72 @@
-import { FaBars } from "react-icons/fa";
+import { useState } from 'react';
+import { FaBars } from 'react-icons/fa';
+import { IoMdClose } from 'react-icons/io';
 
 const Navbar = () => {
-    const HomeLinks = [
-        {
-            label: "Welcome",
-            link: "/"
-        },
-        {
-            label: "About",
-            link: "/about"
-        },
-        {
-            label: "Our Brands",
-            link: "/our-brands"
-        },
-        {
-            label: "Contact us",
-            link: "/contact"
-        }
-    ]
+  const HomeLinks = [
+    {
+      label: 'Welcome',
+      link: '/',
+    },
+    {
+      label: 'About',
+      link: '/about',
+    },
+    {
+      label: 'Our Brands',
+      link: '/our-brands',
+    },
+    {
+      label: 'Contact us',
+      link: '/contact',
+    },
+  ];
 
-    return (
-        <div className='flex py-2 justify-center gap-4 items-center'>
-            {
-                HomeLinks.map((links, index) => (
-                    <a href={links.link} key={index} className="uppercase text-sm">
-                        {
-                            links.label
-                        }
-                    </a>
-                ))
-            }
-            <FaBars className="" />
-        </div>
-    )
-}
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
-export default Navbar
-// import React, { useState } from "react";
-// import { FaBars } from "react-icons/fa";
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
-// const Navbar = () => {
-//   const HomeLinks = [
-//     {
-//       label: "Welcome",
-//       link: "/",
-//     },
-//     {
-//       label: "About",
-//       link: "/about",
-//     },
-//     {
-//       label: "Our Brands",
-//       link: "/our-brands",
-//     },
-//     {
-//       label: "Contact us",
-//       link: "/contact",
-//     },
-//   ];
+  return (
+    <div className=" w-full flex flex-row py-2 justify-center items-center gap-4 relative">
+      <div className="sm:hidden">
+        {isMenuOpen ? (
+          <IoMdClose
+            className="absolute cursor-pointer right-0 top-[-80px]"
+            onClick={toggleMenu}
+          />
+        ) : (
+          <FaBars
+            className="absolute cursor-pointer right-0 top-[-80px]"
+            onClick={toggleMenu}
+          />
+        )}
+      </div>
+      <div className= {`${isMenuOpen ? "block" : "hidden"} sm:hidden bg-slate-200 p-4 top-[-55px] z-50 right-0 flex-col absolute flex gap-4 justify-center sm:items-center`}>
+        {HomeLinks.map((link, index) => (
+          <a
+            href={link.link}
+            key={index}
+            className="uppercase text-sm hover:font-extrabold transition ease-in-out"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+      <div className= "sm:flex  gap-4 justify-center sm:items-center hidden">
+        {HomeLinks.map((link, index) => (
+          <a
+            href={link.link}
+            key={index}
+            className="uppercase text-sm hover:font-extrabold transition ease-in-out"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-//   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 375);
-//   const [isMobileMenuOpen, setMobileMenuOpen] = useState<Boolean>(false);
-
-//   const toggleMobileMenu = () => {
-//     setMobileMenuOpen(!isMobileMenuOpen);
-//   };
-
-//   const handleResize = () => {
-//     setIsSmallScreen(window.innerWidth <= 375);
-//   };
-
-//   React.useEffect(() => {
-//     window.addEventListener("resize", handleResize);
-//     return () => {
-//       window.removeEventListener("resize", handleResize);
-//     };
-//   }, []);
-
-//   return (
-//     <div className="flex py-2 justify-center sm:justify-between gap-4 items-center">
-//       {isSmallScreen && (
-//         <div onClick={toggleMobileMenu}>
-//           <FaBars />
-//         </div>
-//       )}
-
-//       <div
-//         className={`sm:flex ${
-//           isSmallScreen ? (isMobileMenuOpen ? "flex" : "hidden") : "flex"
-//         } sm:flex-row flex-col py-2 sm:gap-4 items-center`}
-//       >
-//         {HomeLinks.map((links, index) => (
-//           <a href={links.link} key={index} className="uppercase text-sm">
-//             {links.label}
-//           </a>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
+export default Navbar;
